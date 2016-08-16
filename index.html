@@ -1,0 +1,77 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>APP UnaWeb</title>
+	<link rel="stylesheet" href="themes/Unaweb.min.css" />
+	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+    <link rel="shortcut icon" href="../favicon.ico">
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+<!-- Start of first page: #one -->
+	<div data-role="page" id="inicio" data-theme="e">
+		<div data-role="header" data-position="inline">
+			<h1>Multi-pagina</h1>
+		</div><!-- /header -->
+	    <div role="main" class="ui-content" data-theme="e">
+		<h2>Inicio</h2>
+        
+        <p>I have an <code>id</code> of "one" on my page container. I'm first in the source order so I'm shown when the page loads.</p>
+
+		<p>Se trata de una plantilla de texto modelo de varias páginas que puede copiar para construir su primera página jQuery Mobile. Esta plantilla contiene varios contenedores de "página" en el interior, a diferencia de una plantilla de página única que tiene sólo una página dentro de ella.</p>
+		<p>Sólo ver la fuente y copiar el código para empezar. Toda la CSS y JS está vinculada a las versiones de jQuery CDN así que esto es muy fácil de configurar. Recuerde que debe incluir una etiqueta meta ventana gráfica en la cabeza para ajustar el nivel de zoom.</p>
+		<p>Que enlace a las páginas internas haciendo referencia a la <code>id</code> de la página que desea mostrar. Por ejemplo, para <a href="#two" >enlace</a> a la página con una <code>id</code> de "two", mi enlace tendría una <code>href="#dos"</code> en el código.</p>
+
+		<h3>Mostrar las páginas internas:</h3>		
+	<p><a href="#dos" class="ui-btn ui-shadow ui-corner-all">Ver Página "dos"</a></p>
+	<p><a href="#popup" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Mostrar página "popup" (como un cuadro de diálogo)</a></p>
+	</div><!-- /content -->
+
+	<div data-role="footer" data-theme="e">
+		<h4>Page Footer</h4>
+	</div><!-- /footer -->
+</div><!-- /page one -->
+
+<!-- Start of second page: #two -->
+<div data-role="page" id="dos" data-theme="e">
+
+	<div data-role="header">
+		<h1>Página Dos</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<h2>Página Dos</h2>
+		<p>Tengo una ID de "dos" en mi página de contenedor. Soy el segundo recipiente página en esta plantilla de varias páginas.</p>
+		<p>Tenga en cuenta que el tema es diferente para esta página porque hemos añadido unos cuantos <code>data-theme</code> asignaciones de muestras en la que mostrar lo flexible que es. Puede añadir cualquier contenido o widget a estas páginas, pero está manteniendo estas simples.</p>
+		<p><a href="#one" data-direction="reverse" class="ui-btn ui-shadow ui-corner-all ui-btn-b">Volver a la página "Inicio"</a></p>
+
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div><!-- /footer -->
+</div><!-- /page two -->
+
+<!-- Start of third page: #popup -->
+<div data-role="page" id="popup">
+
+	<div data-role="header" data-theme="b">
+		<h1>Dialog</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<h2>Popup</h2>
+		<p>Tengo una ID de "Popup" en mi página de contenedor y solo se ve como un diálogo porque el vínculo que me tenía una <code>data-rel="dialog"</code> atribuir la que me da este aspecto inserción y una <code>data-transition="pop"</code> atribuir a cambiar la transición a estallar. Sin esto, me gustaría ser de estilo como una página normal.</p>
+		<p><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Volver a la página "Inicio"</a></p>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div><!-- /footer -->
+</div><!-- /page popup -->
+
+</body>
+</html>
