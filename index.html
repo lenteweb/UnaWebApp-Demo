@@ -73,8 +73,24 @@ window.plugins.socialsharing.shareWithOptions(options, onSuccess, onError);
 
 	<div role="main" class="ui-content">
 		<h2>Página Dos</h2>
-		<p>Tengo una ID de "dos" en mi página de contenedor. Soy el segundo recipiente página en esta plantilla de varias páginas.</p>
-		<p>Tenga en cuenta que el tema es diferente para esta página porque hemos añadido unos cuantos <code>data-theme</code> asignaciones de muestras en la que mostrar lo flexible que es. Puede añadir cualquier contenido o widget a estas páginas, pero está manteniendo estas simples.</p>
+		
+        <!-- unlike most apps Twitter doesn't like it when you use an array to pass multiple files as the second param -->
+<button onclick="window.plugins.socialsharing.shareViaTwitter('Message via Twitter')">message via Twitter</button>
+<button onclick="window.plugins.socialsharing.shareViaTwitter('Message and link via Twitter', null /* img */, 'http://www.x-services.nl')">msg and link via Twitter</button>
+<br>
+<button onclick="window.plugins.socialsharing.shareViaFacebook('Message via Facebook', null /* img */, null /* url */, function() {console.log('share ok')}, function(errormsg){alert(errormsg)})">msg via Facebook (with errcallback)</button>
+<br>
+<button onclick="window.plugins.socialsharing.shareViaFacebookWithPasteMessageHint('Message via Facebook', null /* img */, null /* url */, 'Paste it dude!', function() {console.log('share ok')}, function(errormsg){alert(errormsg)})">msg via Facebook (with errcallback)</button>
+<br>
+<button onclick="window.plugins.socialsharing.shareViaWhatsApp('Message via WhatsApp', null /* img */, null /* url */, function() {console.log('share ok')}, function(errormsg){alert(errormsg)})">msg via WhatsApp (with errcallback)</button>
+<br>
+<!-- Want to share a prefilled SMS text? -->
+<button onclick="window.plugins.socialsharing.shareViaSMS('My cool message', null /* see the note below */, function(msg) {console.log('ok: ' + msg)}, function(msg) {alert('error: ' + msg)})">share via SMS</button>
+<!-- Want to prefill some phonenumbers as well? Pass this instead of null. Important notes: For stable usage of shareViaSMS on Android 4.4 and up you require to add at least one phonenumber! Also, on Android make sure you use v4.0.3 or higher of this plugin, otherwise sharing multiple numbers to non-Samsung devices will fail -->
+<button onclick="window.plugins.socialsharing.shareViaSMS('My cool message', '0612345678,0687654321', function(msg) {console.log('ok: ' + msg)}, function(msg) {alert('error: ' + msg)})">share via SMS</button>
+<!-- Need a subject and even image sharing? It's only supported on iOS for now and falls back to just message sharing on Android -->
+<button onclick="window.plugins.socialsharing.shareViaSMS({'message':'My cool message', 'subject':'The subject', 'image':'https://www.google.nl/images/srpr/logo4w.png'}, '0612345678,0687654321', function(msg) {console.log('ok: ' + msg)}, function(msg) {alert('error: ' + msg)})">share via SMS</button>
+<br>
 		<p><a href="#inicio" data-direction="reverse" class="ui-btn ui-shadow ui-corner-all ui-btn-b">Volver a la página "Inicio"</a></p>
 
 	</div><!-- /content -->
