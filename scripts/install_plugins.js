@@ -12,6 +12,7 @@ var pluginlist = [
     "org.apache.cordova.geolocation",
 	"org.apache.cordova.inappbrowser",
     "https://github.com/chrisekelley/AppPreferences/",
+	"https://github.com/cordova-sms/cordova-sms-plugin.git ",
 	"$ phonegap local plugin add https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin.git"
 ];
 
