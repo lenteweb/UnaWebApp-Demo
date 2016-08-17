@@ -11,7 +11,8 @@ var pluginlist = [
     "org.apache.cordova.device-orientation",
     "org.apache.cordova.geolocation",
 	"org.apache.cordova.inappbrowser",
-    "https://github.com/chrisekelley/AppPreferences/"
+    "https://github.com/chrisekelley/AppPreferences/",
+	"$ phonegap local plugin add https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin.git"
 ];
 
 // no need to configure below
