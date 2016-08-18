@@ -31,6 +31,30 @@ var onError = function(msg) {
 
 window.plugins.socialsharing.shareWithOptions(options, onSuccess, onError);
 </script>
+<script>
+<!-- Script sms -->
+var app = {
+    sendSms: function() {
+        var number = document.getElementById('numberTxt').value;
+        var message = document.getElementById('messageTxt').value;
+        alert(number);
+        alert(message);
+
+        //CONFIGURATION
+        var options = {
+            replaceLineBreaks: false, // true to replace \n by a new line, false by default
+            android: {
+                intent: 'INTENT'  // send SMS with the native android SMS messaging
+                //intent: '' // send SMS without open any other app
+            }
+        };
+
+        var success = function () { alert('Message sent successfully'); };
+        var error = function (e) { alert('Message Failed:' + e); };
+        sms.send(number, message, options, success, error);
+    }
+};
+</script>
 </head>
 <body>
 <!-- Start of first page: #one -->
@@ -110,6 +134,9 @@ window.plugins.socialsharing.shareWithOptions(options, onSuccess, onError);
 	<div role="main" class="ui-content">
 		<h2>Popup</h2>
 		<p>Tengo una ID de "Popup" en mi página de contenedor y solo se ve como un diálogo porque el vínculo que me tenía una <code>data-rel="dialog"</code> atribuir la que me da este aspecto inserción y una <code>data-transition="pop"</code> atribuir a cambiar la transición a estallar. Sin esto, me gustaría ser de estilo como una página normal.</p>
+        <input id="numberTxt" placeholder="Enter mobile number" value="" type="tel" />
+<textarea id="messageTxt" placeholder="Enter message"></textarea>
+<input type="button" onclick="app.sendSms()" value="Send SMS" />
 		<p><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Volver a la página "Inicio"</a></p>
 	</div><!-- /content -->
 
