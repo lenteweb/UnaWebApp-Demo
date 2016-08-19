@@ -41,6 +41,7 @@ Carlos Palacios Macedo
     <plugin name="cordova-plugin-geolocation" />
 	<plugin name="cordova-plugin-whitelist" spec="~1" />
 	<plugin name="cordova-plugin-inappbrowser"/>
+	<plugin name="nl.x-services.plugins.socialsharing" spec="4.3.8" source="pgb" />
 	<plugin name="com.cordova.plugins.sms" spec="0.1.2" source="pgb" />
 		
 	<access origin="*" />
