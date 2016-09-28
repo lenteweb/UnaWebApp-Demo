@@ -6,6 +6,8 @@
 	<link rel="stylesheet" href="Unaweb.min.css" />
 	<link rel="stylesheet" href="jquery.mobile.icons.min.css" />
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+        <!-- Custom styles for this template formulario -->
+    <link href="css/jumbotron.css" rel="stylesheet">
     <link rel="shortcut icon" href="../../favicon.ico">
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
@@ -47,6 +49,7 @@ var app = {
 		<h3>Mostrar las páginas internas:</h3>		
 	<p><a href="#dos" class="ui-btn ui-shadow ui-corner-all">Ver Página "dos"</a></p>
 	<p><a href="#popup" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Mostrar página "popup" (como un cuadro de diálogo)</a></p>
+    <p><a href="#popup1" class="ui-btn ui-shadow ui-corner-all" data-rel="dialog" data-transition="pop">Mostrar página formulario (como un cuadro de diálogo)</a></p>
 	</div><!-- /content -->
 
 	<div data-role="footer" data-theme="e">
@@ -96,5 +99,41 @@ var app = {
 	</div><!-- /footer -->
 </div><!-- /page popup -->
 
+<!-- Start of third page: #contacto -->
+<div data-role="page" id="popup1">
+
+	<div data-role="header" data-theme="b">
+		<h1>Dialog</h1>
+	</div><!-- /header -->
+
+	<div role="main" class="ui-content">
+		<h2>Contacto</h2>
+<!--la propiedad enctype permite el envío de archivos adjuntos en el formulario. -->    
+    <form id="form1" class="well col-lg-12" action="enviar.php" method="post" name="form1" enctype="multipart/form-data">
+      <div class="row">
+       <div class="col-lg-6">
+        <label>Nombre*</label> <input id="Nombre" class="form-control" type="text" name="Nombre" /> 
+        <label>Email*</label> <input id="Email" class="form-control" type="email" name="Email" />
+       </div>
+        <div class="col-lg-6"><label>Mensaje*</label> 
+         <textarea id="Mensaje" class="form-control" name="Mensaje" rows="4"></textarea>
+        </div>
+         <div class="col-lg-12">
+    <label for="exampleInputFile">Adjuntar archivo</label>
+    <input type="file" name="adjunto" id="archivo-adjunto">
+    <p class="help-block">Example block-level help text here.</p>
+  </div>
+        <button class="btn btn-default pull-right" type="submit">Enviar</button>
+      </div>
+    </form>
+		<p><a href="#one" data-rel="back" class="ui-btn ui-shadow ui-corner-all ui-btn-inline ui-icon-back ui-btn-icon-left">Volver a la página "Inicio"</a></p>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div><!-- /footer -->
+</div><!-- /page popup -->
+    <!-- La página carga más rapido si estan situados al final del documento. -->
+    <script src="js/jquery.js"></script>
 </body>
 </html>
