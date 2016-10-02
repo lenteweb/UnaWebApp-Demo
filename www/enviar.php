@@ -41,10 +41,10 @@ echo "<script>alert('Los campos marcados con * son obligatorios');location.href 
 // Datos del servidor SMTP
 
     $mail->IsSMTP(); 
-    $mail->Host = "ssl://smtp.gmail.com:465";  // Servidor de Salida.
+    $mail->Host = "tls://smtp.gmail.com:587";  // Servidor de Salida.
     $mail->SMTPAuth = true; 
-    $mail->Username = "lenteweb@gmail.com";  // Correo Electrónico
-    $mail->Password = "Por%dEs/tUa"; // Contraseña
+    $mail->Username = "servidordehosting@gmail.com";  // Correo Electrónico
+    $mail->Password = "133144357"; // Contraseña
     
     if ($mail->Send())
     echo "<script>alert('Formulario enviado exitosamente, le responderemos lo más pronto posible.');location.href ='javascript:history.back()';</script>";
