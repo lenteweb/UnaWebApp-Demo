@@ -14,6 +14,7 @@
 $Nombre = $_POST['Nombre'];
 $Email = $_POST['Email'];
 $Mensaje = $_POST['Mensaje'];
+$archivo = $_FILES['adjunto'];
 
 if ($Nombre=='' || $Email=='' || $Mensaje==''){
 
@@ -21,6 +22,9 @@ echo "<script>alert('Los campos marcados con * son obligatorios');location.href 
 
 }else{
 
+
+    require("archivosformulario/class.phpmailer.php");
+    $mail = new PHPMailer();
 
     $mail->From     = $Email;
     $mail->FromName = $Nombre; 
@@ -35,7 +39,10 @@ echo "<script>alert('Los campos marcados con * son obligatorios');location.href 
     $mail->Subject  =  "Contacto";
     $mail->Body     =  "Nombre: $Nombre \n<br />".    
     "Email: $Email \n<br />".    
-    "Mensaje: $Mensaje \n<br />"; 
+    "Mensaje: $Mensaje \n<br />";
+    $mail->AddAttachment($archivo['tmp_name'], $archivo['name']);
+    
+    
     
 
 // Datos del servidor SMTP
